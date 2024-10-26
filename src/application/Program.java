@@ -15,7 +15,7 @@ public class Program {
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
 		System.out.println("=== TEST 1: seller findById ====");
-		Seller seller =  sellerDao.findById(3);
+		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
 		
 		System.out.println("\n=== TEST 2: seller findByDepartment ====");
@@ -37,5 +37,11 @@ public class Program {
 		seller.setName("Bob Grey");
 		sellerDao.update(seller);
 		System.out.println("Update completed");
+		
+		System.out.println("\n=== TEST 6: seller delete ====");
+		for(int i=10; i <= 11; i++) {
+			sellerDao.deleteById(i);
+		}
+		System.out.println("Delete completed");
 	}
 }
